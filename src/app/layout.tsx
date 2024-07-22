@@ -14,7 +14,7 @@ import TabNavigation from "@/components/ui/TabNavigation/TabNavigation"
 import { siteConfig } from "./siteConfig"
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://yoururl.com"),
+  metadataBase: new URL("https://mine.com"),
   title: siteConfig.name,
   description: siteConfig.description,
   keywords: [],
