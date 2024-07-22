@@ -9,7 +9,8 @@ const inter = Inter({
   variable: "--font-inter",
 })
 
-import { Sidebar } from "@/components/ui/navigation/sidebar"
+import Footer from "@/components/ui/Footer/Footer"
+import TabNavigation from "@/components/ui/TabNavigation/TabNavigation"
 import { siteConfig } from "./siteConfig"
 
 export const metadata: Metadata = {
@@ -33,9 +34,9 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
   },
   twitter: {
-    card: 'summary_large_image',
+    card: "summary_large_image",
     title: "Tremor OSS Dashboard",
-    creator: '@tremorlabs',
+    creator: "@tremorlabs",
   },
   icons: {
     icon: "/favicon.ico",
@@ -54,9 +55,12 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <div className="mx-auto max-w-screen-2xl">
-          <ThemeProvider defaultTheme="system" attribute="class">
-            <Sidebar />
-            <main className="lg:pl-72">{children}</main>
+          <ThemeProvider defaultTheme="light" attribute="class">
+            <div>
+              <TabNavigation />
+              {children}
+              <Footer />
+            </div>
           </ThemeProvider>
         </div>
       </body>

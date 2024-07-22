@@ -736,7 +736,7 @@ const LineChart = React.forwardRef<HTMLDivElement, LineChartProps>(
                 )}
                 strokeOpacity={
                   activeDot || (activeLegend && activeLegend !== category)
-                    ? 0.3
+                    ? 0
                     : 1
                 }
                 activeDot={(props: any) => {
