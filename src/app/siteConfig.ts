@@ -1,15 +1,9 @@
 export const siteConfig = {
-  name: "Dashboard",
-  url: "https://dashboard.tremor.so",
-  description: "The only dashboard you will ever need.",
+  name: "Umar",
+  url: "https://umar.com",
+  description: "Integration Demo",
   baseLinks: {
     home: "/",
-    overview: "/overview",
-    details: "/details",
-    settings: "/settings",
-  },
-  externalLink: {
-    blocks: "https://blocks.tremor.so/templates#dashboard",
   },
 }
 

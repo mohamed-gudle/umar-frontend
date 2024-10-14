@@ -9,22 +9,20 @@ const inter = Inter({
   variable: "--font-inter",
 })
 
-import Footer from "@/components/ui/Footer/Footer"
-import TabNavigation from "@/components/ui/TabNavigation/TabNavigation"
 import { siteConfig } from "./siteConfig"
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://mine.com"),
+  metadataBase: new URL("https://umar.com"),
   title: siteConfig.name,
   description: siteConfig.description,
   keywords: [],
   authors: [
     {
-      name: "yourname",
+      name: "mgudle",
       url: "",
     },
   ],
-  creator: "yourname",
+  creator: "mgudle",
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -32,11 +30,6 @@ export const metadata: Metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
     siteName: siteConfig.name,
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Tremor OSS Dashboard",
-    creator: "@tremorlabs",
   },
   icons: {
     icon: "/favicon.ico",
@@ -56,11 +49,7 @@ export default function RootLayout({
       >
         <div className="mx-auto max-w-screen-2xl">
           <ThemeProvider defaultTheme="light" attribute="class">
-            <div>
-              <TabNavigation />
-              {children}
-              <Footer />
-            </div>
+            {children}
           </ThemeProvider>
         </div>
       </body>
