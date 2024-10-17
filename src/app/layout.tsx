@@ -2,6 +2,8 @@ import type { Metadata } from "next"
 import { ThemeProvider } from "next-themes"
 import { Inter } from "next/font/google"
 import "./globals.css"
+import { AuthProvider } from "@/auth/context/auth0"
+import { AuthGuard } from "@/auth/guard/auth-guard"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -47,9 +49,15 @@ export default function RootLayout({
         className={`${inter.className} antialiased`}
         suppressHydrationWarning
       >
-        <ThemeProvider defaultTheme="light" attribute="class">
-          {children}
-        </ThemeProvider>
+        <AuthProvider>
+          <AuthGuard>
+
+
+            <ThemeProvider defaultTheme="light" attribute="class">
+              {children}
+            </ThemeProvider>
+          </AuthGuard>
+        </AuthProvider>
       </body>
     </html>
   )

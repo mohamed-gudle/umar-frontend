@@ -25,3 +25,15 @@ export function useGetUserAccessToken(
     }
   }, [data, isLoading, error])
 }
+
+export async function createList(
+    url: string,
+    { arg }: { arg:{board: string; listName: string} }
+  ) {
+    const response = await axiosInstance.post("/trello/create-list", {
+        board: arg.board,
+        listName: arg.listName,
+    })
+  
+    return response.data
+  }

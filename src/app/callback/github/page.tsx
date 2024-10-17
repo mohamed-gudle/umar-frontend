@@ -1,17 +1,20 @@
 "use client"
 import { useGetUserToken } from "@/data/github"
-import { useSearchParams } from "next/navigation"
+import { useSearchParams, useRouter } from "next/navigation"
 import { useEffect } from "react"
 
 export default function Page() {
+  const router = useRouter()
   const code = useSearchParams().get("code")
   const { data, isLoading, error } = useGetUserToken(code)
 
   useEffect(() => {
     if (data) {
+      router.push("/")
       console.log(data)
+
     }
-  }, [data])
+  }, [data,router])
 
   if (error) {
     return <div>error</div>
